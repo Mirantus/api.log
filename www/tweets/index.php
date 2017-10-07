@@ -3,7 +3,7 @@
     require '../../app/Tweets.php';
 
     Tweets::connect();
-    $tweets = Tweets::all();
+    $tweets = Tweets::sql('SELECT * FROM :table ORDER BY id DESC');
     $result = [];
     foreach ($tweets as $tweet) {
         $result[] = $tweet->data;
