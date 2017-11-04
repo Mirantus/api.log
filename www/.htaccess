@@ -1,0 +1,6 @@
+<IfModule mod_rewrite.c>
+	RewriteEngine on
+	RewriteBase /
+
+    RewriteRule ^tweets/([0-9]+)/*$ tweets/item.php/?id=$1
+</IfModule>
