@@ -7,7 +7,7 @@ SetEnvIf authorization .+ HTTP_AUTHORIZATION=$0
     RewriteCond %{HTTP:Authorization} ^(.*)
     RewriteRule .* - [e=HTTP_AUTHORIZATION:%1]
 
-    RewriteRule ^tweets/([0-9]+)/*$ tweets/item.php/?id=$1
+    RewriteRule ^tweets/([0-9]+)/*$ tweets/item.php?id=$1
     RewriteRule ^login/*$ auth/login.php
     RewriteRule ^token/*$ auth/token.php
 </IfModule>

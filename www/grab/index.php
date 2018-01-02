@@ -1,6 +1,6 @@
 <?
-require __DIR__ . '/vendor/autoload.php';
-require 'Tweets.php';
+require __DIR__ . '/../../vendor/autoload.php';
+require __DIR__ . '/../../app/Tweets.php';
 
 $settings = array(
     'oauth_access_token' => "3999197043-pHPoIjg0K07XA1vzZgoq4cFmkNVlNRtJwXptwfl",

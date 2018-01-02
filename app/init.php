@@ -7,16 +7,12 @@
     header('Content-Type: application/json');
     header('Access-Control-Allow-Origin: *');
     header('Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS');
-    header('Access-Control-Allow-Headers: Accept, Content-Type, Cache, Authorization');
-
-    if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
-        exit();
-    }
+    header('Access-Control-Allow-Headers: Authorization');
 
     require __DIR__ . '/config.php';
 
-    require '../../vendor/autoload.php';
-    require '../../app/Tweets.php';
+    require __DIR__ . '/../vendor/autoload.php';
+    require __DIR__ . '/../app/Tweets.php';
 
     Tweets::connect();
     $result = [];
