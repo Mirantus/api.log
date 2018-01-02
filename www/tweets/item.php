@@ -7,6 +7,7 @@
     }
 
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        check_auth();
         $data = json_decode(file_get_contents('php://input'));
         $tweet = Tweets::retrieveByPK($_GET['id']);
         $tweet->text = $data->text;
@@ -15,6 +16,7 @@
     }
 
     if ($_SERVER['REQUEST_METHOD'] == 'DELETE') {
+        check_auth();
         $tweet = Tweets::retrieveByPK($_GET['id']);
         $tweet->delete();
         $result = $tweet->data;

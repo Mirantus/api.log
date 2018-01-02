@@ -10,6 +10,7 @@
     }
 
     if ($_SERVER['REQUEST_METHOD'] == 'PUT') {
+        check_auth();
         $data = json_decode(file_get_contents('php://input'));
 
         $tweet = new Tweets();
